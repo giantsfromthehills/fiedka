@@ -11,7 +11,7 @@ jobs:
       - uses: cachix/install-nix-action@v13
       - run: nix-shell --run "niv update"
       - name: detect changes
-        run: [ `git status --porcelain=v1 2>/dev/null | wc -l` -eq 0 ] && exit 1
+        run: '[ `git status --porcelain=v1 2>/dev/null | wc -l` -eq 0 ] && exit 1'
       - run: nix-build
       - name: Create Pull Request
           uses: peter-evans/create-pull-request@v3.10.1
