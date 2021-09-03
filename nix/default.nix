@@ -1,7 +1,7 @@
 let 
   sources = import ./sources.nix;
   pkgs = import sources.nixpkgs {};
-  src = import sources.website;
+  src = sources.website;
 in
 with pkgs;
 {
@@ -11,7 +11,7 @@ with pkgs;
   # Add the derivation to the PATH
   installPhase = ''
   mkdir -p $out
-  cp index.html $out/
+  cp * $out/
   '';
 };
 }
