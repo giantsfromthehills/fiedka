@@ -14,9 +14,9 @@ jobs:
         run: '[ `git status --porcelain=v1 2>/dev/null | wc -l` -eq 0 ] && exit 1'
       - run: nix-build
       - name: Create Pull Request
-          uses: peter-evans/create-pull-request@v3.10.1
-          with:
-            commit-message: "[automation] update website"
-            title: "[automation] update website"
-            branch: "automation/update-website"
-            labels: website update
+        uses: peter-evans/create-pull-request@v3.10.1
+        with:
+          commit-message: "[automation] update website"
+          title: "[automation] update website"
+          branch: "automation/update-website"
+          labels: website update
